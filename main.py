@@ -2,22 +2,15 @@ import cv2
 import mediapipe as mp 
 import numpy as np
 
-# Initialize MediaPipe
 mp_hands = mp.solutions.hands
 mp_draw = mp.solutions.drawing_utils
 hands = mp_hands.Hands(max_num_hands=2, min_detection_confidence=0.7)
 
-# Finger tip landmark IDs
+
 tip_ids = [4, 8, 12, 16, 20]
-
-# Operation buttons
 buttons = {"ADD": (20, 20), "SUB": (150, 20), "MUL": (280, 20), "DIV": (410, 20)}
-
-# Operation state
 operation = None
 result = None
-
-# Utility to count fingers
 def count_fingers(hand_landmarks, hand_label):
     fingers = []
     # Thumb
@@ -29,8 +22,6 @@ def count_fingers(hand_landmarks, hand_label):
     for id in range(1, 5):
         fingers.append(1 if hand_landmarks.landmark[tip_ids[id]].y < hand_landmarks.landmark[tip_ids[id] - 2].y else 0)
     return sum(fingers)
-
-# Start webcam
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -42,7 +33,7 @@ while True:
     hand_count = 0
     fingers_count = []
 
-    # Draw operation buttons
+    # Draw buttons
     for op, pos in buttons.items():
         color = (255, 255, 255) if operation != op else (0, 0, 255)
         cv2.rectangle(img, pos, (pos[0]+100, pos[1]+50), (50, 50, 50), -1)
