@@ -23,7 +23,9 @@
 
 ## 🧪 Demo
 
-##add linkedin page
+(https://www.linkedin.com/posts/shanmugapriyan-jagadeeswaran_aiineducation-computervision-opencv-activity-7317373846695673856-85n8?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFa01BIBsem-s2Af3ZPW1EkL7Y8xPmjAEEs)
+
+
 ---
 
 ## 🧰 Tech Stack
